@@ -39,9 +39,9 @@ object SpongeTask {
 
   def task(statement: Task => Unit): SpongeTask = new SpongeTask(Task.builder().execute(task => statement(task)))
   def runnableTask(statement: => Unit): SpongeTask = task(_ => statement)
-  def synchronize(statement: => Unit)(implicit plugin: SpongePlugin): Unit =
-    runnableTask(statement) after 1 submit plugin
+  def synchronize(statement: => Unit)(implicit plugin: SpongePlugin): Task =
+    runnableTask(statement) after 0 submit plugin
 
-  def asynchronize(statement: => Unit)(implicit plugin: SpongePlugin): Unit =
-    runnableTask(statement) after 1 async true submit plugin
+  def asynchronize(statement: => Unit)(implicit plugin: SpongePlugin): Task =
+    runnableTask(statement) after 0 async true submit plugin
 }

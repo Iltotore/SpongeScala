@@ -1,13 +1,18 @@
 package io.github.iltotore.spongescala
 
 import io.github.iltotore.scalabuilder
+import org.spongepowered.api.text.Text
 import org.spongepowered.api.text.action.{ClickAction, HoverAction, ShiftClickAction}
 import org.spongepowered.api.text.format.{TextColor, TextFormat, TextStyle}
-import org.spongepowered.api.text.{LiteralText, Text}
+
+import scala.jdk.CollectionConverters.IterableHasAsScala
+import scala.jdk.OptionConverters.RichOptional
 
 object text {
 
   class Builder(private var base: Text.Builder) extends scalabuilder.Builder[Text] {
+
+    def this(msg: String) = this(Text.builder(msg))
 
     def children: Seq[Text] = base.getChildren.asScala.toSeq
 
@@ -32,6 +37,10 @@ object text {
     def shiftClickAction: Option[ShiftClickAction[_]] = base.getShiftClickAction.toScala
 
     def shiftClickAction_=(value: ShiftClickAction[_]): Unit = base.onShiftClick(value)
+
+    def style: TextStyle = base.getStyle
+
+    def style_=(value: TextStyle): Unit = base.getFormat.style(value)
 
     def text_=(value: String): Unit = base = Text.builder(value)
 
@@ -62,8 +71,4 @@ object text {
       builder.build()
     }
   }
-
-  def unapply(arg: Text): Option[(TextColor, TextStyle)] = Some(arg.getColor, arg.getStyle)
-
-  def unapply(arg: LiteralText): Option[(String, TextColor, TextStyle)] = Some(arg.getContent, arg.getColor, arg.getStyle)
 }
