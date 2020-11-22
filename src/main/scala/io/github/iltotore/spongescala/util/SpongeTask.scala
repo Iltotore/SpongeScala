@@ -1,7 +1,6 @@
 package io.github.iltotore.spongescala.util
 
 import io.github.iltotore.spongescala.SpongePlugin
-import io.github.iltotore.spongescala.util.util.DurationToTick
 import org.spongepowered.api.scheduler.Task
 
 import scala.concurrent.duration.FiniteDuration
