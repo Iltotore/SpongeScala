@@ -34,6 +34,7 @@ sponge {
 shadowJar {
     project.configurations.implementation.canBeResolved = true
     configurations = [project.configurations.implementation]
+    archiveClassifier = 'plugin'
     from('build/tmp/generateMetadata') //Include mcmod.info
     relocate 'scala', 'io.github.iltotore.spongescala.library' //Avoid Scala version clash with forge (which uses 2.11)
 }
