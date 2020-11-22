@@ -9,6 +9,7 @@ Here is a list of some SpongeScala's features:
 - [Text API](https://github.com/Iltotore/wiki/Text-API)
 
 # Installing
+## Importing the library
 You can install this library like other scala libs from a Maven repo.
 
 <details>
@@ -32,3 +33,5 @@ dependencies {
 libraryDependencies += "io.github.iltotore" %% "sponge-scala" % "version"
 ```
 </details>
+
+## Using the 
