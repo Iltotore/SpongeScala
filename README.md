@@ -4,9 +4,9 @@ It includes syntactic sugar and Scala-specific features like pattern matching on
 
 # Features
 Here is a list of some SpongeScala's features:
-- [Misc Features](https://github.com/Iltotore/wiki/Misc)
-- [Task DSL](https://github.com/Iltotore/wiki/Task-API)
-- [Text API](https://github.com/Iltotore/wiki/Text-API)
+- [Misc Features](https://github.com/Iltotore/SpongeScala/wiki/Misc)
+- [Task DSL](https://github.com/Iltotore/SpongeScala/wiki/Task-API)
+- [Text API](https://github.com/Iltotore/SpongeScala/wiki/Text-API)
 
 # Installing
 ## Importing the library
